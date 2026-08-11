@@ -1,11 +1,3 @@
-/* =========================================================
-   Prince Nelson Aguinaldo Jr. — Portfolio
-   Design concept: a QA / systems-log aesthetic.
-   Every recurring device (status badges, timestamps, severity
-   tags, the terminal hero) is drawn from the subject's real
-   work as a software testing intern.
-   ========================================================= */
-
 :root {
   --bg: #0a0e12;
   --surface: #10161d;
@@ -204,6 +196,8 @@ button:focus-visible {
   padding: 10px 14px;
   background: var(--surface-alt);
   border-bottom: 1px solid var(--border);
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .terminal-bar span {
@@ -211,6 +205,7 @@ button:focus-visible {
   height: 10px;
   border-radius: 50%;
   background: #333e49;
+  flex-shrink: 0;
 }
 
 .terminal-bar .path {
@@ -218,6 +213,11 @@ button:focus-visible {
   font-family: var(--mono);
   font-size: 12px;
   color: var(--text-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .terminal-body {
@@ -578,6 +578,92 @@ section {
   background: var(--surface-alt);
 }
 
+/* ---------- freelance / web design work ---------- */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.work-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.work-card:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-3px);
+}
+
+.work-thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.work-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.work-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.work-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.work-loc {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.work-desc {
+  font-size: 13.5px;
+  color: var(--text-dim);
+  margin: 0;
+  flex: 1;
+}
+
+.work-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+}
+
+.work-link:hover { text-decoration: underline; }
+
 /* ---------- skills ---------- */
 .skills-grid {
   display: grid;
@@ -711,6 +797,7 @@ section {
 
   .about-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: 1fr; }
+  .work-grid { grid-template-columns: 1fr 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .lead-grid { grid-template-columns: 1fr; }
   .cert-list { grid-template-columns: 1fr; }
@@ -723,4 +810,5 @@ section {
   section { padding: 64px 0; }
   .hero { padding: 56px 0 44px; }
   .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .work-grid { grid-template-columns: 1fr; }
 }
