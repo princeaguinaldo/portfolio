@@ -1,3 +1,11 @@
+/* =========================================================
+   Prince Nelson Aguinaldo Jr. — Portfolio
+   Design concept: a QA / systems-log aesthetic.
+   Every recurring device (status badges, timestamps, severity
+   tags, the terminal hero) is drawn from the subject's real
+   work as a software testing intern.
+   ========================================================= */
+
 :root {
   --bg: #0a0e12;
   --surface: #10161d;
@@ -581,8 +589,8 @@ section {
 /* ---------- freelance / web design work ---------- */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
 .work-card {
@@ -602,7 +610,7 @@ section {
 
 .work-thumb {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--surface-alt);
   border-bottom: 1px solid var(--border);
@@ -797,7 +805,7 @@ section {
 
   .about-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: 1fr; }
-  .work-grid { grid-template-columns: 1fr 1fr; }
+  .work-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .lead-grid { grid-template-columns: 1fr; }
   .cert-list { grid-template-columns: 1fr; }
